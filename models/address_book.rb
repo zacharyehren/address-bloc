@@ -8,7 +8,7 @@ class AddressBook
   end
 
   def add_entry(name, phone_number, email)
-    #created a variable to store the insertion index
+    #walk through this + discuss lexicographic
     index = 0
     entries.each do |entry|
     if name < entry.name
@@ -17,5 +17,16 @@ class AddressBook
     index += 1
   end
     entries.insert(index, Entry.new(name, phone_number, email))
+  end
+
+  def remove_entry(name, phone_number, email)
+    #is nil always needed when declaring an empty variable?
+    delete_entry = nil
+    entries.each do |entry|
+      if name == entry.name && phone_number == entry.phone_number && email == entry.email
+        delete_entry = entry
+      end
+    end
+    entries.delete(delete_entry)
   end
 end
