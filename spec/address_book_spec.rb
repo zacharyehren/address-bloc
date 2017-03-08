@@ -45,13 +45,11 @@ RSpec.describe AddressBook do
         name = "Zach Ehren"
         phone_number = "216-534-5555"
         email = "zacharyehren@gmail.com"
-        #Why is this written differently than the Jeff Goldblum entry above?
         book.add_entry(name, phone_number, email)
 
         expect(book.entries.size).to eq(2)
         book.remove_entry(name, phone_number, email)
         expect(book.entries.size).to eq(1)
-        #Why first.name? Couldnt we use book.entries.name?
         expect(book.entries.first.name).to eq("Jeff Goldblum")
       end
     end
