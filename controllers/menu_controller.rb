@@ -18,41 +18,40 @@ class MenuController
 
     selection = gets.to_i
     puts "You picked #{selection}"
-  end
 
-  case selection
-    when 1
-      system "clear"
-      view_all_entries
-      main_menu
-    when 2
-      system "clear"
-      create_entry
-      main_menu
-    when 3
-      system "clear"
-      search_entries
-      main_menu
-    when 4
-      system "clear"
-      read_csv
-      main_menu
-    when 5
-      puts "Good-bye!"
-      #terminates the program. 0 signals the program is exiting without an error
-      exit(0)
-    else
-      system "clear"
-      puts "Sorry, that is not a valid input"
-      main_menu
-    end
+		case selection
+			when 1
+				system "clear"
+				view_all_entries
+				main_menu
+			when 2
+				system "clear"
+				create_entry
+				main_menu
+			when 3
+				system "clear"
+				search_entries
+				main_menu
+			when 4
+				system "clear"
+				read_csv
+				main_menu
+			when 5
+				puts "Good-bye!"
+				#terminates the program. 0 signals the program is exiting without an error
+				exit(0)
+			else
+				system "clear"
+				puts "Sorry, that is not a valid input"
+				main_menu
+		end
   end
 
   def view_all_entries
     #iterates through all the entries in the AddressBook class
     address_book.entries.each do |entry|
       system "clear"
-      put entry.to_s
+      puts entry.to_s
       #method that displays a submenu for each entry. method details found below
       entry_submenu(entry)
     end
@@ -105,5 +104,5 @@ class MenuController
         puts "#{selection} is not a valid input"
         entry_submenu(entry)
       end
-    end
+	end
 end
