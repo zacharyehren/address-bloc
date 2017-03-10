@@ -44,4 +44,37 @@ class AddressBook
     end
   end
 
+  def binary_search(name)
+    #saves the index of the leftmost item in the array as lower and the index
+    #of the rightmost entry as upper
+    lower = 0
+    upper = entries.length - 1
+
+    #while the lower index is less than or equal to our upper index...
+    while lower <= upper
+    #we find the middle index by taking the sum of the lower and upper and
+    #dividing it by two. Ruby truncates any decimal numbers so if upper is 5 and
+    #lower is zero, then mid will get set to 2
+      mid = (lower + upper) / 2
+    #finally we retrieve the name of the entry at the middle index and store it
+    #as mid_name
+      mid_name = entries[mid].name
+    #we compare the name we are searching for to the name of the middle index
+      if name == mid_name
+    #if the condition above is true, we return the entry
+        return entries[mid]
+    #if name is before mid_name, we set upper to mid - 1 because the name
+    #must be in the lower half of the array
+      elsif name < mid_name
+        upper = mid - 1
+    #if name is after mid_name, then we set lower to mid + 1 because the name
+    #must be in the upper half of the array
+      elsif name > mid_name
+        lower = mid + 1
+      end
+    end
+      return nil
+
+  end
+
 end
