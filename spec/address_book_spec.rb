@@ -84,8 +84,7 @@ RSpec.describe AddressBook do
     check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
   end
 
-   end
-
+end
 
     describe "#remove_entry" do
       it "removes only one entry from the address book" do
