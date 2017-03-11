@@ -181,5 +181,17 @@ end
      end
     end
 
+    describe "#detonate_entries" do
+      it "deletes all entries" do
+        book.add_entry("Zach Ehren", "212-212-2121", "zachehren@gmail.com")
+        book.add_entry("Zach Ehren", "212-212-2121", "zachehren@gmail.com")
+        book.add_entry("Zach Ehren", "212-212-2121", "zachehren@gmail.com")
+
+        book.detonate_entries
+        expect(book.entries.size).to eq 0
+      end
+
+    end
+
 
 end
