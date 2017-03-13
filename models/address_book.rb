@@ -79,18 +79,6 @@ class AddressBook
 
   def detonate_entries
     entries = []
-    # puts "Are you sure you want to delete all entries?"
-    # answer = gets.chomp.to_s
-    #
-    # if answer == "yes" || "y" || "YES" || "Y"
-    #   address_book.entries.each do |entry|
-    #     address_book.entries.delete(entry)
-    #   else
-    #     system "clear"
-    #     main_menu
-    #   end
-    #   main_menu
-    # end
   end
 
 end
