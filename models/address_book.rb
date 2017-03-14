@@ -78,7 +78,7 @@ class AddressBook
   end
 
   def detonate_entries
-    entries = []
+    @entries = []
   end
 
 end
